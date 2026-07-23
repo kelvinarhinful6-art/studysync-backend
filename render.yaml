@@ -1,0 +1,139 @@
+# Render Blueprint deployment for StudySync Backend
+# Automatically provisions PostgreSQL database and 6 microservices
+
+databases:
+  - name: studysync-postgres
+    databaseName: studysync
+    user: studysync
+    plan: free
+
+services:
+  # 1. Gateway Service (Public Endpoint for Mobile App & Web)
+  - type: web
+    name: studysync-gateway
+    env: docker
+    dockerfilePath: gateway/Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: AUTH_SERVICE_HOST
+        value: studysync-auth
+      - key: LEARNING_SERVICE_HOST
+        value: studysync-learning
+      - key: TUTORING_SERVICE_HOST
+        value: studysync-tutoring
+      - key: PAYMENT_SERVICE_HOST
+        value: studysync-payment
+      - key: ENGAGEMENT_SERVICE_HOST
+        value: studysync-engagement
+
+  # 2. Auth Service
+  - type: web
+    name: studysync-auth
+    env: docker
+    dockerfilePath: auth-service/Dockerfile
+    plan: free
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: studysync-postgres
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: studysync-postgres
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: studysync-postgres
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MAIL_USERNAME
+        value: costudy.server@gmail.com
+      - key: MAIL_PASSWORD
+        value: "iqwf kppr zzet xvaz"
+
+  # 3. Learning Service
+  - type: web
+    name: studysync-learning
+    env: docker
+    dockerfilePath: learning-service/Dockerfile
+    plan: free
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: studysync-postgres
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: studysync-postgres
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: studysync-postgres
+          property: password
+
+  # 4. Tutoring Service
+  - type: web
+    name: studysync-tutoring
+    env: docker
+    dockerfilePath: tutoring-service/Dockerfile
+    plan: free
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: studysync-postgres
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: studysync-postgres
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: studysync-postgres
+          property: password
+
+  # 5. Payment Service
+  - type: web
+    name: studysync-payment
+    env: docker
+    dockerfilePath: payment-service/Dockerfile
+    plan: free
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: studysync-postgres
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: studysync-postgres
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: studysync-postgres
+          property: password
+      - key: PAYSTACK_SECRET_KEY
+        value: sk_test_52006f1fde4e0aa1b745a7738a1229e91c533920
+      - key: PAYSTACK_PUBLIC_KEY
+        value: pk_test_df01ad6dd361d557c153f319092f486e53fa1cd3
+
+  # 6. Engagement Service
+  - type: web
+    name: studysync-engagement
+    env: docker
+    dockerfilePath: engagement-service/Dockerfile
+    plan: free
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: studysync-postgres
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: studysync-postgres
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: studysync-postgres
+          property: password
