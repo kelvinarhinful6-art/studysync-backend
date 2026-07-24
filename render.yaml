@@ -15,16 +15,16 @@ services:
     envVars:
       - key: PORT
         value: 8080
-      - key: AUTH_SERVICE_HOST
-        value: studysync-auth
-      - key: LEARNING_SERVICE_HOST
-        value: studysync-learning
-      - key: TUTORING_SERVICE_HOST
-        value: studysync-tutoring
-      - key: PAYMENT_SERVICE_HOST
-        value: studysync-payment
-      - key: ENGAGEMENT_SERVICE_HOST
-        value: studysync-engagement
+      - key: AUTH_SERVICE_URI
+        value: http://studysync-auth:8080
+      - key: LEARNING_SERVICE_URI
+        value: http://studysync-learning:8080
+      - key: TUTORING_SERVICE_URI
+        value: http://studysync-tutoring:8080
+      - key: PAYMENT_SERVICE_URI
+        value: http://studysync-payment:8080
+      - key: ENGAGEMENT_SERVICE_URI
+        value: http://studysync-engagement:8080
 
   # 2. Auth Service
   - type: web

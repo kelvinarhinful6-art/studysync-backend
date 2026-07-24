@@ -5,41 +5,42 @@ spring:
     gateway:
       routes:
         - id: auth
-          uri: http://${AUTH_SERVICE_HOST:auth-service}:8080
+          uri: ${AUTH_SERVICE_URI:http://auth-service:8080}
           predicates:
             - Path=/api/auth/**
         - id: learning
-          uri: http://${LEARNING_SERVICE_HOST:learning-service}:8080
+          uri: ${LEARNING_SERVICE_URI:http://learning-service:8080}
           predicates:
             - Path=/api/groups/**,/api/matching/**,/api/invites/**,/api/study/**,/api/support/**
         - id: learning-ws
-          uri: ws://${LEARNING_SERVICE_HOST:learning-service}:8080
+          uri: ${LEARNING_WS_URI:ws://learning-service:8080}
           predicates:
             - Path=/ws,/ws/**
         - id: tutoring-uploads
-          uri: http://${TUTORING_SERVICE_HOST:tutoring-service}:8080
+          uri: ${TUTORING_SERVICE_URI:http://tutoring-service:8080}
           predicates:
             - Path=/uploads/questions/**
           filters:
             - StripPrefix=0
         - id: learning-uploads
-          uri: http://${LEARNING_SERVICE_HOST:learning-service}:8080
+          uri: ${LEARNING_SERVICE_URI:http://learning-service:8080}
           predicates:
             - Path=/uploads/**
           filters:
             - StripPrefix=0
         - id: tutoring
-          uri: http://${TUTORING_SERVICE_HOST:tutoring-service}:8080
+          uri: ${TUTORING_SERVICE_URI:http://tutoring-service:8080}
           predicates:
             - Path=/api/tutor-applications/**,/api/admin/**,/api/tutors/**,/api/subscriptions/**,/api/bookings/**,/api/reviews/**,/api/courses/**
         - id: engagement
-          uri: http://${ENGAGEMENT_SERVICE_HOST:engagement-service}:8080
+          uri: ${ENGAGEMENT_SERVICE_URI:http://engagement-service:8080}
           predicates:
             - Path=/api/notifications/**,/api/analytics/**,/api/ads/**
         - id: payment
-          uri: http://${PAYMENT_SERVICE_HOST:payment-service}:8080
+          uri: ${PAYMENT_SERVICE_URI:http://payment-service:8080}
           predicates:
             - Path=/api/payments/**
+
 
 server:
   port: 8080
