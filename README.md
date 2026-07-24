@@ -1,4 +1,5 @@
-# StudySync Backend
+# StudySync Backend - Live Production Deployment
+
 
 Spring Boot microservices + PostgreSQL, run offline via Docker Compose.
 
