@@ -1,6 +1,4 @@
 # Render Blueprint deployment for StudySync Backend
-# Automatically provisions PostgreSQL database and 6 microservices
-
 databases:
   - name: studysync-postgres
     databaseName: studysync
@@ -36,9 +34,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        fromDatabase:
-          name: studysync-postgres
-          property: connectionString
+        value: jdbc:postgresql://studysync-postgres:5432/studysync
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -62,9 +58,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        fromDatabase:
-          name: studysync-postgres
-          property: connectionString
+        value: jdbc:postgresql://studysync-postgres:5432/studysync
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -82,9 +76,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        fromDatabase:
-          name: studysync-postgres
-          property: connectionString
+        value: jdbc:postgresql://studysync-postgres:5432/studysync
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -102,9 +94,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        fromDatabase:
-          name: studysync-postgres
-          property: connectionString
+        value: jdbc:postgresql://studysync-postgres:5432/studysync
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -126,9 +116,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        fromDatabase:
-          name: studysync-postgres
-          property: connectionString
+        value: jdbc:postgresql://studysync-postgres:5432/studysync
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
