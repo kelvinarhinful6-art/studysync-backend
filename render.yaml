@@ -34,7 +34,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://studysync-postgres:5432/studysync
+        value: jdbc:postgresql://studysync-postgres:5432/studysync_7ppw
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -58,7 +58,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://studysync-postgres:5432/studysync
+        value: jdbc:postgresql://studysync-postgres:5432/studysync_7ppw
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -76,7 +76,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://studysync-postgres:5432/studysync
+        value: jdbc:postgresql://studysync-postgres:5432/studysync_7ppw
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -94,7 +94,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://studysync-postgres:5432/studysync
+        value: jdbc:postgresql://studysync-postgres:5432/studysync_7ppw
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -116,7 +116,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://studysync-postgres:5432/studysync
+        value: jdbc:postgresql://studysync-postgres:5432/studysync_7ppw
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
