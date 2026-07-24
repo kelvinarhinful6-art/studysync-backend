@@ -19,8 +19,9 @@ public class AppUser {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", nullable = false)
     private UserType userType;
-    @Column(nullable = false)
+    @Column(name = "verified", nullable = false)
     private boolean verified = false;
+
     @Column(name = "verification_code")
     private String verificationCode;
     @Column(name = "full_name")
