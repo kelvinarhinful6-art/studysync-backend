@@ -34,7 +34,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a:5432/studysync_7ppw
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -58,7 +58,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a:5432/studysync_7ppw
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -76,7 +76,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a:5432/studysync_7ppw
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -94,7 +94,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a:5432/studysync_7ppw
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -116,7 +116,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a:5432/studysync_7ppw
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
