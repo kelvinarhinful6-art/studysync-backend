@@ -16,7 +16,8 @@ services:
       - key: PORT
         value: 8080
       - key: AUTH_SERVICE_URI
-        value: http://studysync-auth:8080
+        value: https://studysync-auth-eg8u.onrender.com
+
       - key: LEARNING_SERVICE_URI
         value: http://studysync-learning:8080
       - key: TUTORING_SERVICE_URI
