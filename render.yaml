@@ -17,7 +17,6 @@ services:
         value: 8080
       - key: AUTH_SERVICE_URI
         value: https://studysync-auth-eg8u.onrender.com
-
       - key: LEARNING_SERVICE_URI
         value: http://studysync-learning:8080
       - key: TUTORING_SERVICE_URI
@@ -35,7 +34,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -59,7 +58,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -77,7 +76,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -95,7 +94,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
@@ -117,7 +116,7 @@ services:
     plan: free
     envVars:
       - key: DB_URL
-        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require
+        value: jdbc:postgresql://dpg-d9h6dvcm0tmc73bus3eg-a.oregon-postgres.render.com:5432/studysync_7ppw?sslmode=require&sslfactory=org.postgresql.ssl.NonValidatingFactory
       - key: DB_USER
         fromDatabase:
           name: studysync-postgres
